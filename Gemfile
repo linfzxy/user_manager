@@ -2,7 +2,7 @@ source'http://gems.ruby-china.org'
 # source 'https://rubygems.org'
 
 # mongoid
-gem 'mongoid'
+gem 'mongoid', '~> 6.0.0'
 gem 'bson_ext'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
