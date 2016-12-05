@@ -1,6 +1,10 @@
 source'http://gems.ruby-china.org'
 # source 'https://rubygems.org'
 
+# jwt规范库和加密规则 (json api token
+gem 'jwt'
+gem 'bcrypt'
+
 # mongoid
 gem 'mongoid', '~> 6.0.0'
 gem 'bson_ext'
