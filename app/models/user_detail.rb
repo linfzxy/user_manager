@@ -19,13 +19,22 @@ class UserDetail
   belongs_to :user_basic
   index({ user_basic_id: 1 }, { background: true })
 
-  # 新建user_detail 传入map
-  def self.new_with_default_nickname hash,user
-    detail=UserDetail.new (hash)
-    detail.nickname=user.wx_id if !user.nil? && !detail.nickname?
-    user.user_detail=detail
-    detail
+  # # 新建user_detail 传入map 需要手动save
+  # def self.new_with_default_nickname hash,user
+  #   detail=UserDetail.new (hash)
+  #   detail.nickname=user.wx_id if !user.nil? && !detail.nickname?
+  #   user.user_detail=detail
+  #   detail
+  # end
+
+  # 发起新活动
+  def new_activity hash
+    activity=Activity.new hash
+    CandidateInfo
+
   end
+
+
 
 end
 

@@ -36,4 +36,13 @@ class UserBasic
     Token.encode token
   end
 
+  # 新建user_detail 传入map 需要手动save
+  def new_detail hash
+    detail=UserDetail.new (hash)
+    detail.nickname=self.wx_id if !detail.nickname?
+    self.user_detail=detail
+    detail
+  end
+
+
 end

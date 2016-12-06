@@ -6,15 +6,25 @@ class TestController < ApplicationController
   skip_before_action :verify_authenticity_token
   #skip_before_action :verify_authenticity_token, :if => Proc.new { |c| c.request.format == 'application/json' }
 
-  #新建的方法
   def test
+
+  end
+
+  def test5
+    render plain:FILE_PATH
+  end
+
+  #新建用户信息的方法
+  def test6
     user=UserBasic.new ({
-      :wx_id=>"hellothemongoid"
+      :wx_id=>"hellothemongoid2"
+      # :tag=>['hello','bby','good']
     })
     user.save
-    UserDetail.new_with_default_nickname({
-                                             :email=>"hello@q.com"
-                                         },user).save
+    user.new_detail({
+                                             :email=>"hello@q2.com",
+            :tags=>[1,2,3,4]
+                                         }).save
     render plain:'h'
   end
   def test4
